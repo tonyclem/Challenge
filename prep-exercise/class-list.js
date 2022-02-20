@@ -16,32 +16,26 @@ const students = require("./find-mentors").students;
 const classes = require("./find-mentors").classes;
 
 const getPeopleOfClass = (className) => {
-  //   if (className.students === undefined) {
-  //     return `${className.name}`; // ?
-  //   }
-  students.map((className) => {
-    if (className.graduated === true) {
-      //   return `[the current Student name is: { ${className.name} at ${className.class} }]`;
-      return `${className.graduated}`; // ?
+  const studentsName = students.map((className) => {
+    if (className.graduated === false) {
+      return `[the current Student name is: { ${className.name} at ${className.class} }]`; //?
     }
-    return `${className.graduated}`; // ?
+    return ` ${className.graduated}`;
   });
 
-  mentors.forEach((mentor) => {
+  const mentorsName = mentors.forEach((mentor) => {
     if (mentor.nowTeaching === "javascript") {
-      return mentor.name; // ?
-      //   return `The teacher is ${mentor.name} and is teaching javaScript`; // ?
+      return `The teacher is ${mentor.name} and is teaching ${mentor.nowTeaching}`; // ?
     }
     if (mentor.nowTeaching === "react") {
-      //   return `The teacher is ${mentor.name} and is teaching react`; // ?
-      return mentor.name; // ?
+      return `The teacher name is ${mentor.name} and is teaching ${mentor.nowTeaching}`;
     }
   });
-  return; // ?
-  //   return `[the current Student name is: { ${className.name} at ${className.class} }]`; //?
+
+  return studentsName, mentorsName; //?
 };
 // console.log(getPeopleOfClass("class34"));
-console.log(getPeopleOfClass(mentors));
+console.log(getPeopleOfClass(students, mentors));
 
 /**
  * We would like to have a complete overview of the current active classes.
@@ -58,14 +52,12 @@ console.log(getPeopleOfClass(mentors));
 const getActiveClasses = () => {
   students.forEach((student) => {
     if (student.graduated === false) {
-      return `[{ name: ${student.name} role: ${student.class} }]`; // ?
+      return `[{ name: ${student.name} role: ${student.class} }]`; //?
     }
-    return; // ?
+    return true;
   });
   classes.map((classe) => {
-    // ?
     if (classe.active === true) {
-      // ?
       return `The active student is: ${classe.name} `; // ?
     }
   });

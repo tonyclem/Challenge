@@ -14,17 +14,17 @@
  */
 const { mentors } = require("./find-mentors");
 
-console.log(mentors);
+// console.log(mentors);
 
 const possibleMentorsForModule = (moduleName) => {
-  // TODO complete this function
-  const mentorsName = mentors.forEach((moduleName) => {
+  mentors.forEach((moduleName) => {
     return [moduleName.name];
   });
+  return moduleName;
 };
 // You can uncomment out this line to try your function
-// console.log(possibleMentorsForModule('using-apis'));
-console.log(possibleMentorsForModule(mentors));
+console.log(possibleMentorsForModule("using-apis"));
+// console.log(possibleMentorsForModule(mentors));
 
 /**
  * Tjebbe wants to make it even easier for himself.
@@ -32,12 +32,16 @@ console.log(possibleMentorsForModule(mentors));
  *
  * It should return a single name.
  */
+
 const findMentorForModule = (moduleName) => {
-  moduleName[Math.floor(Math.random * moduleName.length)];
-  mentors.forEach((mentorName) => {
-    return `Hello ${mentorName.name}, you're to teach the giving module`; // ?
+  let result = [];
+  // let randomly = moduleName[Math.floor(Math.random * moduleName.length)];
+  mentors.map((mentorName) => {
+    result.push(mentorName.name); //?
+    console.log(mentorName.name);
   });
+  console.log(result);
 };
-findMentorForModule(mentors);
+// findMentorForModule(mentors);
 // console.log(findMentorForModule(mentors));
-// console.log(findMentorForModule("javascript"));
+console.log(findMentorForModule("javascript"));
