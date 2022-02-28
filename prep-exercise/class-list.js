@@ -18,21 +18,21 @@ const classes = require("./find-mentors").classes;
 const getPeopleOfClass = (className) => {
   const studentsName = students.map((className) => {
     if (className.graduated === false) {
-      return `[the current Student name is: { ${className.name} at ${className.class} }]`; //?
+      return `[the current Student name is: { ${className.name} at ${className.class} }]`;
     }
     return ` ${className.graduated}`;
   });
 
   const mentorsName = mentors.forEach((mentor) => {
     if (mentor.nowTeaching === "javascript") {
-      return `The teacher is ${mentor.name} and is teaching ${mentor.nowTeaching}`; // ?
+      return `The teacher is ${mentor.name} and is teaching ${mentor.nowTeaching}`;
     }
     if (mentor.nowTeaching === "react") {
       return `The teacher name is ${mentor.name} and is teaching ${mentor.nowTeaching}`;
     }
   });
 
-  return studentsName, mentorsName; //?
+  return studentsName, mentorsName;
 };
 // console.log(getPeopleOfClass("class34"));
 console.log(getPeopleOfClass(students, mentors));
@@ -52,13 +52,13 @@ console.log(getPeopleOfClass(students, mentors));
 const getActiveClasses = () => {
   students.forEach((student) => {
     if (student.graduated === false) {
-      return `[{ name: ${student.name} role: ${student.class} }]`; //?
+      return `[{ name: ${student.name} role: ${student.class} }]`;
     }
     return true;
   });
   classes.map((classe) => {
     if (classe.active === true) {
-      return `The active student is: ${classe.name} `; // ?
+      return `The active student is: ${classe.name} `;
     }
   });
 };
