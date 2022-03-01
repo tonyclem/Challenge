@@ -5,8 +5,10 @@ const creatures = [
   { name: "Monkey", habitat: "Jungle" },
 ];
 
+// const wileAnimal = creatures.filter
+
 const arrCreate = creatures.filter((creature) => {
-  return creature.habitat === "Ocean";
+  return creature.habitat === "Ocean" || creature.habitat === "Savanna";
 });
 
 const arrContainer = arrCreate.map((newCreate) => ({
