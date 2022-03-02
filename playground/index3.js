@@ -13,7 +13,7 @@ const arrCreate = creatures.filter((creature) => {
 
 const arrContainer = arrCreate.map((newCreate) => ({
   nature: newCreate.name,
-  living: "water",
+  position: "kings",
   role: "animal",
 }));
 

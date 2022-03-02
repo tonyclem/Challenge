@@ -13,5 +13,9 @@ const aListOfObjects = [
   },
 ];
 
-const sections = aListOfObjects.map(({ prop1, prop2 }) => ({ prop1, prop2 }));
+const sections = aListOfObjects.map(({ prop1, prop2 }) => ({
+  prop1,
+  prop2,
+  greeting: "Welcome",
+}));
 console.log(sections);

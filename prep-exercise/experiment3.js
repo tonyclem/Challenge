@@ -35,9 +35,3 @@ const getPeopleOfClass = (className) => {
 };
 
 console.log(getPeopleOfClass(students));
-
-// const nameOfMentor = mentors.filter(function (mentor) {
-//     return (
-//       mentor.nowTeaching === "javascript" || mentor.nowTeaching === "react"
-//     );
-//   });

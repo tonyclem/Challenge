@@ -37,7 +37,7 @@ const findMentorForModule = (moduleName) => {
   let result = [];
   // let randomly = moduleName[Math.floor(Math.random * moduleName.length)];
   mentors.map((mentorName) => {
-    result.push(mentorName.name); //?
+    result.push(mentorName.name);
     console.log(mentorName.name);
   });
   console.log(result);
