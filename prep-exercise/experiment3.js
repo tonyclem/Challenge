@@ -20,7 +20,10 @@ const getPeopleOfClass = (className) => {
   const currentStudent = className.filter(function (student) {
     return student.graduated === false;
   });
-  currentStudent.map(({ name }) => ({ name, role: "student" }));
+  const cStudent = currentStudent.map(({ name }) => ({
+    name,
+    role: "student",
+  }));
 
   const nameOfMentor = mentors.filter(function (mentor) {
     return (
@@ -31,7 +34,7 @@ const getPeopleOfClass = (className) => {
     name,
     role: "Mentor",
   }));
-  return { currentStudent, mentorCurrentTeacher };
+  return { cStudent, mentorCurrentTeacher };
 };
 
 console.log(getPeopleOfClass(students));

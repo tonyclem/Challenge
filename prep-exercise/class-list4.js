@@ -75,20 +75,9 @@ const mentors = [
 // [{ name: 'John', role: 'student' }, { name: 'Mary', role: 'mentor' }]
 
 const getPeopleOfClass = (className) => {
-  const hackYourFu = classes.find((s) => (s.name = className));
-  const currentHack = hackYourFu.currentModule;
-  console.log(currentHack);
-  //   const mentorName = mentors.filter(
-  //     (mentor) => mentor.nowTeaching === hackYourFu.currentModule
-  //   );
-  //   console.log(mentorName);
-
-  //   const studentName = students
-  //     .filter((student) => student.name === className)
-  //     .map((student) => ({ name: student.name, role: "student" }));
-  //   return mentorName;
-  return hackYourFu;
+  className.map(({ name }) => ({ name, role: "mentor" }));
+  return className;
 };
-// console.log(getPeopleOfClass(mentors));
+console.log(getPeopleOfClass(mentors));
 
-console.log(getPeopleOfClass("class 35"));
+// console.log(getPeopleOfClass("class 35"));
