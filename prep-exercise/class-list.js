@@ -10,10 +10,10 @@
  *  [{ name: 'John', role: 'student' }, { name: 'Mary', role: 'mentor' }]
  */
 
-const modules = require("./find-mentors").modules;
-const mentors = require("./find-mentors").mentors;
-const students = require("./find-mentors").students;
-const classes = require("./find-mentors").classes;
+const modules = require("./find-mentorsData").modules;
+const mentors = require("./find-mentorsData").mentors;
+const students = require("./find-mentorsData").students;
+const classes = require("./find-mentorsData").classes;
 
 const getPeopleOfClass = (className) => {
   const studentsName = students.map((className) => {

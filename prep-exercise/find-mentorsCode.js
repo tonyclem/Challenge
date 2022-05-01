@@ -7,6 +7,64 @@
  */
 // const { mentors } = require("./find-mentors");
 
+// Start Data
+
+const modules = [
+  { name: "html-css", displayName: "HTML/CSS" },
+  { name: "javascript", displayName: "JavaScript" },
+  { name: "browsers", displayName: "Browsers" },
+  { name: "using-apis", displayName: "Using APIs" },
+  { name: "node", displayName: "Node.js" },
+  { name: "databases", displayName: "Databases" },
+  { name: "react", displayName: "React" },
+  { name: "project", displayName: "Project" },
+];
+
+const classes = [
+  {
+    name: "class32",
+    startDate: "23-3-2021",
+    active: false,
+    graduationDate: "7-11-2021",
+  },
+  {
+    name: "class33",
+    startDate: "28-5-2021",
+    active: false,
+    graduationDate: "7-11-2021",
+  },
+  {
+    name: "class34",
+    startDate: "2-9-2021",
+    active: true,
+    currentModule: "react",
+  },
+  {
+    name: "class35",
+    startDate: "14-11-2021",
+    active: true,
+    currentModule: "using-apis",
+  },
+  {
+    name: "class36",
+    startDate: "5-1-2022",
+    active: true,
+    currentModule: "javascript",
+  },
+];
+
+const students = [
+  { name: "Fede", class: "class33", gitHubName: "fedefu", graduated: false },
+  { name: "Tjebbe", class: "class32", gitHubName: "Tjebbee", graduated: true },
+  { name: "Rob", class: "class34", gitHubName: "robvk", graduated: false },
+  {
+    name: "Wouter",
+    class: "class35",
+    gitHubName: "wouterkleijn",
+    graduated: false,
+  },
+];
+
 const mentors = [
   {
     name: "Stas",
@@ -36,15 +94,19 @@ const mentors = [
   },
 ];
 
+// End Data
+
 const possibleMentorsForModule = (moduleName) => {
-  moduleName.map(({ modules }) => {
-    modules.name;
-  });
-  return moduleName;
+  const possibleMentors = [];
+  for (let i = 0; i < mentors.length; i++) {
+    if (mentors[i].canTeach.includes(moduleName)) {
+      possibleMentors.push(mentors[i].name);
+    }
+  }
+  return possibleMentors;
 };
 // You can uncomment out this line to try your function
-// console.log(possibleMentorsForModule("using-apis"));
-console.log(possibleMentorsForModule(mentors));
+console.log(possibleMentorsForModule("using-apis"));
 
 /**
  * Tjebbe wants to make it even easier for himself.
@@ -53,15 +115,10 @@ console.log(possibleMentorsForModule(mentors));
  * It should return a single name.
  */
 
-// const findMentorForModule = (moduleName) => {
-//   let result = [];
-//   // let randomly = moduleName[Math.floor(Math.random * moduleName.length)];
-//   mentors.map((mentorName) => {
-//     result.push(mentorName.name);
-//     console.log(mentorName.name);
-//   });
-//   console.log(result);
-// };
-// findMentorForModule(mentors);
-// console.log(findMentorForModule(mentors));
-// console.log(findMentorForModule("javascript"));
+const findMentorForModule = (moduleName) => {
+  const possibleMentors = possibleMentorsForModule(moduleName);
+  const randomMentor = Math.floor(Math.random() * possibleMentors.length);
+  return possibleMentors[randomMentor];
+};
+
+console.log(findMentorForModule("javascript"));
