@@ -32,27 +32,22 @@ function dance(img) {
   });
 }
 
-function catWalk() {
+async function catWalk() {
   const img = document.querySelector("img");
   const startPos = -img.width;
   const centerPos = (window.innerWidth - img.width) / 2;
   const stopPos = window.innerWidth;
 
-  walk(img, startPos, centerPos)
-    .then(() => dance(img))
-    .then(() => walk(img, centerPos, stopPos))
-    .then(() => catWalk());
-
-  // Use the `walk()` and `dance()` functions to let the cat do the following:
-  // 1. Walk from `startPos` to `centerPos`.
-  // 2. Then dance for 5 secs.
-  // 3. Then walk from `centerPos` to `stopPos`.
-  // 4. Repeat the first three steps indefinitely.
+  while (true) {
+    await walk(img, startPos, centerPos);
+    await dance(img);
+    await walk(img, centerPos, stopPos);
+  }
 }
 
-window.addEventListener("load", catWalk);
+// walk(img, startPos, centerPos)
+// .then(() => dance(img))
+// .then(() => walk(img, centerPos, stopPos))
+// .then(() => catWalk());
 
-// What do you think the advantages are of having the constants in the global scope? Are there any disadvantages?
-// To make the code loop we cannot use a standard JavaScript loop (for or while). Why is that?
-// Do you feel this version is easier to read than the version you made in the Browsers module?
-// Is this version more efficient or not or does it not matter?
+window.addEventListener("load", catWalk);
