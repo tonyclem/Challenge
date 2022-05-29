@@ -18,8 +18,6 @@ const INVALID_URL = "https://pokeapi.co/api/v2/pokemons/?limit=5";
 async function fetchJSON(url) {
   // TODO
   fetch(url)
-    // Fetch the JSON data from the web API that responds to the `url` parameter
-
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -29,6 +27,7 @@ async function fetchJSON(url) {
     .then((data) => renderResults(data))
     .catch((err) => renderError(err));
 
+  // Fetch the JSON data from the web API that responds to the `url` parameter
   // and return a promise that resolves to a corresponding JavaScript object.
   // Make sure to check for HTTP errors.
 }
@@ -43,6 +42,7 @@ function renderResults(pokemons) {
   //    with indentation and line breaks).
   const pokemonsElement = document.querySelector("#json");
   pokemonsElement.innerText = JSON.stringify(pokemons, null, 2);
+  console.log(pokemonsElement);
 }
 
 function renderError(err) {
@@ -54,6 +54,7 @@ function renderError(err) {
   //    `.message` property of the `err` parameter.
   const errorElement = document.querySelector("#error");
   errorElement.innerText = err;
+  console.log(errorElement);
 }
 
 function main() {

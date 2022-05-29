@@ -42,7 +42,7 @@ function catWalk() {
     .then(() => dance(img))
     .then(() => walk(img, centerPos, stopPos))
     .then(() => catWalk());
-
+  
   // Use the `walk()` and `dance()` functions to let the cat do the following:
   // 1. Walk from `startPos` to `centerPos`.
   // 2. Then dance for 5 secs.

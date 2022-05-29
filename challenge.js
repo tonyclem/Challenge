@@ -15,3 +15,19 @@ const fizzBuzz = () => {
 };
 
 console.log(fizzBuzz());
+
+// Challenge 2
+
+const fetchData = () => {
+  fetch("https://pokeapi.co")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+fetchData();
